@@ -12,6 +12,7 @@ function urlFor(source) {
 export default function SinglePost() {
 
     const [singlePost, setSinglePost] = useState(null);
+    const [author, setAuthor] = useState(null);
     const { slug } = useParams();
 
     useEffect(() => {
@@ -31,9 +32,18 @@ export default function SinglePost() {
             }`)
             .then((data) => setSinglePost(data[0]))
             .catch(console.error);
+        
+        sanityClient.fetch(`*[_type == "author"]{
+                name,
+                bio,
+                "authorImage": image.asset->url
+            }`)
+            .then((data) => setAuthor(data))
+            .catch(console.error);
+        
     }, [slug])
     
-    if(!singlePost) return <div>Loading...</div>
+    if(!singlePost || !author) return <div>Loading...</div>
 
     return (
         <main className="bg-gray-200 min-h-screen p-12">
@@ -43,14 +53,12 @@ export default function SinglePost() {
                         <div className="bg-white bg-opacity-75 rounded p-12">
                             <h1 className="cursive text-3xl lg:text-6xl mb-4">{singlePost.title}</h1>
                             <div className="flex justify-center text-gray-800">
-                                {singlePost.authorImage && (
-                                    <img
-                                        src={urlFor(singlePost.authorImage).url()}
-                                        alt={singlePost.name}
-                                        className="w-10 h-10 rounded-full"
-                                    />
-                                )}
-                                <p className="cursive flex items-center pl-2 text-2xl">{singlePost.name}</p>
+                                <img
+                                    src={urlFor(author[0].authorImage).url()}
+                                    alt={author[0].name}
+                                    className="w-10 h-10 rounded-full"
+                                />
+                                <p className="cursive flex items-center pl-2 text-2xl">{author[0].name}</p>
                             </div>
                         </div>
                     </div>
