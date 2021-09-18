@@ -24,7 +24,7 @@ export default function Post() {
     },[])
     
     return (
-        <main className="bg-green-100 min-h-screen p-12">
+        <main className="min-h-screen p-12" style={{backgroundColor: "#d6d3d1"}}>
             <section className="container mx-auto">
                 <h1 className="text-5xl flex justify-center cursive">
                     My Projects
@@ -32,7 +32,7 @@ export default function Post() {
                 <h2 className="text-lg text-gray-600 flex justify-center mb-12">
                     Welcome to my projects page!
                 </h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {postData && postData.map((post, index) => (
                         <article >
                             <Link to={"/post/" + post.slug.current} key={post.slug.current}>

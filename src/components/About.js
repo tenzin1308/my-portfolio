@@ -26,7 +26,7 @@ export default function About() {
     if(!author) return <div>Loading...</div>
     
     return (
-        <main className="relative">
+        <main className="relative" style={{backgroundColor: "#d6d3d1"}}>
             <img src={about_image} alt="background" className="absolute w-full" />
             <div className="p-10 lg:pt-48 container mx-auto relative">
                 <section className="bg-green-800 rounded-lg shadow-2xl lg:flex p-20">
