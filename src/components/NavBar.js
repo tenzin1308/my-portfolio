@@ -37,6 +37,7 @@ export default function NavBar() {
                         target="_blank"
                         fgColor="#fff"
                         style={{ height: 35, width: 35 }} />
+
                     <SocialIcon
                         url="https://www.instagram.com/tenz1308/"
                         className="mr-4"
