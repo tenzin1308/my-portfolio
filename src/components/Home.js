@@ -10,9 +10,6 @@ export default function Home() {
                         Hello, Welcome to my Portfolio.
                     </h1>
                 </section>
-                <section>
-                    <About />
-                </section>
 
             </article>
         </main>
