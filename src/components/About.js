@@ -25,7 +25,7 @@ export default function About() {
     if(!author) return <div>Loading...</div>
     
     return (
-        <main className="relative" style={{backgroundColor: "#d6d3d1"}}>
+        <main className="relative h-screen w-screen" style={{backgroundColor: "#d6d3d1"}}>
             <div className="p-10 lg:pt-48 container mx-auto relative">
                 <section className="bg-gray-50 rounded-lg shadow-2xl lg:flex p-20">
                     {console.log('author: ',author)}
