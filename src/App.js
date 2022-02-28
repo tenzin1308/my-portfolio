@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
 import About from "./components/About";
-import SinglePost from "./components/SinglePost";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 // import Post from "./components/Post";
 import Project from "./components/Project";
-import NavBar from "./components/NavBar";
+import SinglePost from "./components/SinglePost";
 
 function App() {
   return (
