@@ -1,5 +1,5 @@
 ## Update on the Porfolio
 
-[] Change the UI
-[] Connect the Backend
-[] implement Contact form
+[x] Change the UI
+[x] Connect the Backend
+[x] implement Contact form
