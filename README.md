@@ -7,3 +7,4 @@
 - [ ] SinglePost Page
 - [x] implement Contact form
 - [ ] Toaster styling
+- [ ] Add links to the project (like github live demo)
