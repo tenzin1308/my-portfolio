@@ -110,6 +110,7 @@ export default function ProjectsSection() {
                       title={project.title}
                       img={project.mainImage.asset.url}
                       desc={project.body}
+                      slug={project.slug.current}
                     />
                   </SwiperSlide>
                 );
