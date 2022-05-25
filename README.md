@@ -1,7 +1,8 @@
 ## Update on the Porfolio
 
 ### Todo List
-- [ ] Change the UI
-- [ ] Connect the Backend
+
+- [x] Change the UI
+- [x] Connect the Backend
 - [ ] Update Project tab
 - [ ] implement Contact form
