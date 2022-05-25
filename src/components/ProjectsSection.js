@@ -53,7 +53,7 @@ const ProjectsSectionStyle = styled.div`
 `;
 
 export default function ProjectsSection() {
-  const [projects, setProjects] = useState(null);
+  const [postData, setPostData] = useState(null);
 
   useEffect(() => {
     sanityClient
@@ -71,13 +71,9 @@ export default function ProjectsSection() {
                 body
             }`
       )
-      .then((data) => {
-        console.log('data in projects section => ', data);
-        setProjects(data);
-      })
+      .then((data) => setPostData(data))
       .catch(console.error);
   }, []);
-
   return (
     <ProjectsSectionStyle>
       <div className="container">
@@ -105,8 +101,8 @@ export default function ProjectsSection() {
               },
             }}
           >
-            {projects &&
-              projects.map((project, index) => {
+            {postData ? (
+              postData.map((project, index) => {
                 if (index >= 5) return;
                 return (
                   <SwiperSlide key={project.slug.current}>
@@ -117,7 +113,10 @@ export default function ProjectsSection() {
                     />
                   </SwiperSlide>
                 );
-              })}
+              })
+            ) : (
+              <>loading...</>
+            )}
           </Swiper>
         </div>
       </div>
