@@ -15,9 +15,14 @@ const GlobalStyles = createGlobalStyle`
     --black: black;
   }
   html{
+    overflow: scroll;
     font-size: 10px;
     font-family: 'Roboto Mono';
     background-color: var(--dark-bg);
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent
   }
   ul,li{
     list-style: none;
