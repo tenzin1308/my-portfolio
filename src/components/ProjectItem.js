@@ -22,6 +22,10 @@ const ProjectItemStyle = styled.div`
   }
   .projectItem__title {
     font-size: 2.2rem;
+    ${'' /* Single line text overflow */}
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .projectItem__desc {
     font-size: 1.6rem;
