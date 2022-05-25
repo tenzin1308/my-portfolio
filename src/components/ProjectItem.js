@@ -50,6 +50,7 @@ export default function ProjectItem({
   img = '',
   title = 'Project Title',
   desc = 'Project Description',
+  slug = '',
 }) {
   // function to combined all text from the array of objects
   const getBody = (arr) => {
@@ -58,11 +59,11 @@ export default function ProjectItem({
 
   return (
     <ProjectItemStyle>
-      <Link to="/projects" className="projectItem__img">
+      <Link to={'/post/' + slug} className="projectItem__img">
         <img src={img} alt="project" />
       </Link>
       <div className="projectItem__info">
-        <Link to="#">
+        <Link to={'/post/' + slug}>
           <h3 className="projectItem__title">{title}</h3>
         </Link>
         <p className="projectItem__desc">{getBody(desc)}</p>

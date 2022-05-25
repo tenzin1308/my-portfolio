@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { MdSearch } from 'react-icons/md';
+import { MdSearch } from 'react-icons/md';
 import styled from 'styled-components';
 import sanityClient from '../client';
 import ProjectItem from '../components/ProjectItem';
@@ -70,33 +70,32 @@ export default function Projects() {
   }, []);
   // useState hook for project search
   const [projectData, setProjectData] = React.useState(null);
-  // UNCOMMENT BELOW CODE TO ENABLE SEARCH
   // live search
-  // const [searchText, setSearchText] = React.useState('');
+  const [searchText, setSearchText] = React.useState('');
 
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   setSearchText(e.target.value);
-  //   if (!e.target.value.length > 0) {
-  //     setProjectData(postData);
-  //   }
-  // };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchText(e.target.value);
+    if (!e.target.value.length > 0) {
+      setProjectData(postData);
+    }
+  };
 
-  // React.useEffect(() => {
-  //   if (searchText === '') return;
-  //   setProjectData(() =>
-  //     postData.filter((item) =>
-  //       item.title.toLowerCase().match(searchText.toLowerCase())
-  //     )
-  //   );
-  // }, [searchText]);
+  React.useEffect(() => {
+    if (searchText === '') return;
+    setProjectData(() =>
+      postData.filter((item) =>
+        item.title.toLowerCase().match(searchText.toLowerCase())
+      )
+    );
+  }, [searchText]);
 
   return (
     <ProjectsStyle>
       <div className="container">
         <SectionTitle heading="Projects" subheading="some of my works" />
-        {/* To Enable live Searchbar uncomment the below code */}
-        {/* <div className="projects__searchBar">
+        {/* Live Searchbar */}
+        <div className="projects__searchBar">
           <form>
             <input
               type="text"
@@ -106,7 +105,7 @@ export default function Projects() {
             />
             <MdSearch className="searchIcon" />
           </form>
-        </div> */}
+        </div>
         {/* Projects */}
         <div className="projects__allItems">
           {projectData ? (
@@ -116,6 +115,7 @@ export default function Projects() {
                 img={project.mainImage.asset.url}
                 title={project.title}
                 desc={project.body}
+                slug={project.slug.current}
               />
             ))
           ) : (
