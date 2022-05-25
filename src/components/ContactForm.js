@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
+import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 const FormStytle = styled.form`
@@ -57,15 +58,15 @@ export default function ContactForm() {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          toast.success('Message sent successfully!');
+          setEmail('');
+          setMessage('');
+          setName('');
         },
         (error) => {
-          console.log(error.text);
+          toast.error('Message failed to send!');
         }
       );
-    setEmail('');
-    setMessage('');
-    setName('');
   };
 
   return (
