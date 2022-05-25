@@ -147,6 +147,14 @@ export default function About() {
               items={['LaGuardia Community College', 'March 2019 - Jun 2019']}
             />
           </div>
+          {/* Hackathons */}
+          <div className="about__info__item">
+            <h1 className="about__info__heading">Hackathons</h1>
+            <AboutInfoItem
+              title="CUNY Hackathon 2019"
+              items={['Budget-It', 'Java Desktop Application']}
+            />
+          </div>
           {/* Skill */}
           <div className="about__info__item">
             <h1 className="about__info__heading">My Skill</h1>
