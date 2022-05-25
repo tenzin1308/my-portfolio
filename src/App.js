@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavMenu from './components/NavMenu';
 import ScrollToTop from './components/ScrollToTop';
@@ -9,6 +10,32 @@ import Projects from './pages/Projects';
 function App() {
   return (
     <>
+      <div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: '',
+            duration: 5000,
+            style: {
+              background: '#fffff',
+              color: '#000',
+            },
+            // Default options for specific types
+            success: {
+              duration: 3000,
+              theme: {
+                primary: 'green',
+                secondary: 'black',
+              },
+            },
+          }}
+        />
+      </div>
       <Router>
         <NavMenu />
         <ScrollToTop />

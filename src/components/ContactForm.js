@@ -1,4 +1,6 @@
-import React from 'react';
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
+import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 const FormStytle = styled.form`
@@ -43,9 +45,33 @@ export default function ContactForm() {
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        'service_sse9ozr',
+        'template_12o3pti',
+        form.current,
+        'cDMEdLp12C5xbAU0L'
+      )
+      .then(
+        (result) => {
+          toast.success('Message sent successfully!');
+          setEmail('');
+          setMessage('');
+          setName('');
+        },
+        (error) => {
+          toast.error('Message failed to send!');
+        }
+      );
+  };
+
   return (
     <div>
-      <FormStytle>
+      <FormStytle onSubmit={sendEmail} ref={form}>
         <div className="form-group">
           <label htmlFor="name">
             Your name
@@ -62,7 +88,7 @@ export default function ContactForm() {
           <label htmlFor="email">
             Your email
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={email}
