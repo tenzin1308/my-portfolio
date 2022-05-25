@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             style: {
               background: '#fffff',
               color: '#000',
+              fontSize: '1.8rem',
             },
             // Default options for specific types
             success: {
@@ -44,6 +46,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </>
