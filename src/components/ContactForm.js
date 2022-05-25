@@ -1,4 +1,5 @@
-import React from 'react';
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 const FormStytle = styled.form`
@@ -43,9 +44,33 @@ export default function ContactForm() {
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        'service_sse9ozr',
+        'template_12o3pti',
+        form.current,
+        'cDMEdLp12C5xbAU0L'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setEmail('');
+    setMessage('');
+    setName('');
+  };
+
   return (
     <div>
-      <FormStytle>
+      <FormStytle onSubmit={sendEmail} ref={form}>
         <div className="form-group">
           <label htmlFor="name">
             Your name
@@ -62,7 +87,7 @@ export default function ContactForm() {
           <label htmlFor="email">
             Your email
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={email}
