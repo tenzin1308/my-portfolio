@@ -4,7 +4,7 @@
 - [x] Change the UI
 - [x] Connect the Backend
 - [x] Update Project tab
-- [ ] SinglePost Page
-- [x] implement Contact form
-- [ ] Toaster styling
-- [ ] Add links to the project (like github live demo)
+[ ] SinglePost Page
+[x] implement Contact form
+[ ] Toaster styling
+[ ] Add links to the project (like github live demo)
