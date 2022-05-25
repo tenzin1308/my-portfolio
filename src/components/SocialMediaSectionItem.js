@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdDesktopMac } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PText from './PText';
 
@@ -23,12 +24,15 @@ export default function SocialMediaSectionItem({
   icon = <MdDesktopMac />,
   title = 'This is title',
   desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  linkTo = '#',
 }) {
   return (
     <SocialMediaSectionItemStyle>
-      <div className="socialMedia__icon">{icon}</div>
-      <div className="socialMedia__title">{title}</div>
-      <PText>{desc}</PText>
+      <Link to={{ pathname: linkTo }} target="_blank">
+        <div className="socialMedia__icon">{icon}</div>
+        <div className="socialMedia__title">{title}</div>
+        <PText>{desc}</PText>
+      </Link>
     </SocialMediaSectionItemStyle>
   );
 }

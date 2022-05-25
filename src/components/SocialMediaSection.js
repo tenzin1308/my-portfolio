@@ -31,17 +31,20 @@ export default function SocialMediaSection() {
           <SocialMediaSectionItem
             icon={<FaLinkedin />}
             title="LinkedIn"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            desc="This is my LinkedIn Profile."
+            linkTo="https://www.linkedin.com/in/tenz-tashi/"
           />
           <SocialMediaSectionItem
             icon={<FaGithubAlt />}
             title="Github"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            desc="Find all my projects' source code."
+            linkTo="https://github.com/tenzin1308"
           />
           <SocialMediaSectionItem
             icon={<FaInstagram />}
             title="Instagram"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            desc="Connect with me on the IG."
+            linkTo="https://www.instagram.com/tz.1308/"
           />
         </div>
       </div>
