@@ -105,7 +105,11 @@ export default function About() {
               </PText>
             </div>
             {/* Link the resume here */}
-            <Button btnText="Download CV" btnLink="#" />
+            <Button
+              btnText="Download CV"
+              btnLink="https://www.dropbox.com/s/dly25hckv0emcuy/Tenzin%20Tashi%20.pdf?dl=0"
+              download
+            />
           </div>
           <div className="right">
             <img src={AboutImg} alt="Tenzin Tashi" />
