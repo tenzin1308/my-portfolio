@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
+import SinglePost from './pages/SinglePost';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/projects" component={Projects} />
+          <Route path="/post/:slug" component={SinglePost} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
