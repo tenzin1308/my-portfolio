@@ -39,6 +39,9 @@ const HeroStyles = styled.div`
   .hero__info {
     margin-top: -18rem;
   }
+  .para {
+    color: var(--white);
+  }
   @media only screen and (max-width: 768px) {
     .hero {
       min-height: 750px;
