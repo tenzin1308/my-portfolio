@@ -15,7 +15,7 @@ const AboutInfoItemStyle = styled.div`
     display: flex;
     gap: 1.5rem;
     position: absolute;
-    left: 35rem;
+    left: 40rem;
     ${'' /* left: 18rem; */}
   }
   .item {
