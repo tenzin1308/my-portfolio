@@ -124,7 +124,7 @@ export default function About() {
               items={['City College of New York (CCNY)']}
             />
             <AboutInfoItem title="Major" items={['Computer Science']} />
-            <AboutInfoItem title="GPA" items={['3.844']} />
+            <AboutInfoItem title="GPA" items={['3.847']} />
             <AboutInfoItem title="Graduation Year" items={['June 2022']} />
           </div>
           {/* Experience */}
