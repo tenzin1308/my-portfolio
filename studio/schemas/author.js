@@ -19,6 +19,16 @@ export default {
       },
     },
     {
+      name: 'gpa',
+      title: 'GPA',
+      type: 'number',
+    },
+    {
+      name: 'cv',
+      title: 'CV',
+      type: 'url',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -34,7 +44,7 @@ export default {
         {
           title: 'Block',
           type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
+          styles: [{ title: 'Normal', value: 'normal' }],
           lists: [],
         },
       ],
@@ -46,4 +56,4 @@ export default {
       media: 'image',
     },
   },
-}
+};
