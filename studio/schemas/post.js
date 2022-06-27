@@ -22,7 +22,17 @@ export default {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
+    },
+    {
+      name: 'githubLink',
+      title: 'Github Link',
+      type: 'url',
+    },
+    {
+      name: 'demoLink',
+      title: 'Demo Link',
+      type: 'url',
     },
     {
       name: 'mainImage',
@@ -51,10 +61,10 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
+      const { author } = selection;
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
-      })
+      });
     },
   },
-}
+};

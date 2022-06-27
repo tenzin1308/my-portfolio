@@ -12,33 +12,7 @@ import SinglePost from './pages/SinglePost';
 function App() {
   return (
     <>
-      <div>
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            // Define default options
-            className: '',
-            duration: 5000,
-            style: {
-              background: '#fffff',
-              color: '#000',
-              fontSize: '1.8rem',
-            },
-            // Default options for specific types
-            success: {
-              duration: 3000,
-              theme: {
-                primary: 'green',
-                secondary: 'black',
-              },
-            },
-          }}
-        />
-      </div>
+      <Toast />
       <Router>
         <NavMenu />
         <ScrollToTop />
@@ -54,5 +28,36 @@ function App() {
     </>
   );
 }
+
+// Toaster sub-component
+const Toast = () => (
+  <div>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+      gutter={8}
+      containerClassName=""
+      containerStyle={{}}
+      toastOptions={{
+        // Define default options
+        className: '',
+        duration: 5000,
+        style: {
+          background: '#fffff',
+          color: '#000',
+          fontSize: '1.8rem',
+        },
+        // Default options for specific types
+        success: {
+          duration: 3000,
+          theme: {
+            primary: 'green',
+            secondary: 'black',
+          },
+        },
+      }}
+    />
+  </div>
+);
 
 export default App;

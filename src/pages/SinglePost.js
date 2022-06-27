@@ -1,8 +1,9 @@
 import BlockContent from '@sanity/block-content-to-react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
 import sanityClient from '../client';
+import Button from '../components/Button';
 import SectionTitle from '../components/SectionTitle';
 
 const SinglePostStyle = styled.div`
@@ -46,6 +47,10 @@ const SinglePostStyle = styled.div`
     font-size: 1.6rem;
     line-height: 3rem;
   }
+  .singlePost__body__buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
   @media only screen and (max-width: 768px) {
     .singlePost__body {
       padding-left: 4rem;
@@ -77,12 +82,15 @@ export default function SinglePost() {
                     }
                 },
                 body,
+                githubLink,
+                demoLink,
                 "name": auther->name,
                 "autherImage": auther->image
             }`
       )
       .then((data) => setSinglePost(data[0]))
       .catch(console.error);
+
     //  fetch author data
     sanityClient
       .fetch(
@@ -123,6 +131,23 @@ export default function SinglePost() {
               projectId="10drkjrr"
               dataset="production"
             />
+            <div className="singlePost__body__buttons">
+              {singlePost.githubLink && (
+                <Button
+                  btnLink={singlePost.githubLink}
+                  btnText="Github"
+                  download
+                />
+              )}
+              {singlePost.demoLink && (
+                <Button
+                  btnLink={singlePost.demoLink}
+                  btnText="Demo"
+                  download
+                  outline
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
